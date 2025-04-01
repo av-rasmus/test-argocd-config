@@ -1,11 +1,36 @@
-nginx:
-  service:
-    type: ClusterIP
-    port: 80
-  ingress:
-    enabled: false
-    hosts:
-      - name: my-web-server.local
-        paths:
-          - path: /
-            pathType: Prefix
+replicaCount: 1
+
+image:
+  repository: nginx
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 81
+
+ingress:
+  enabled: false
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+serviceAccount:
+  create: true
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
+
+containerPort: 81  # Ensure this matches the port in deployment.yaml
+
+secretName: staging-key
+secretPath: "kv/staging/key"
+password: ""

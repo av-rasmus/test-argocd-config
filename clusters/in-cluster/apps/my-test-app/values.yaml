@@ -1,2 +1,11 @@
-ingress:
-  enabled: true
+nginx:
+  service:
+    type: ClusterIP
+    port: 80
+  ingress:
+    enabled: false
+    hosts:
+      - name: my-web-server.local
+        paths:
+          - path: /
+            pathType: Prefix
