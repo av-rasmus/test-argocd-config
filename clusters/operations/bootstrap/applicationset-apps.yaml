@@ -19,7 +19,7 @@ spec:
         directory:
           jsonnet: {}
           recurse: true
-        repoURL: https://github.com/av-rasmus/test-argocd-config
+        repoURL: https://github.com/av-rasmus/test-argocd-config.git
         targetRevision: HEAD
         path: clusters/{{ .name }}/apps
       destination:
