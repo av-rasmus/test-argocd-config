@@ -9,9 +9,7 @@ spec:
     repoURL: https://github.com/av-rasmus/test-argocd-config.git
     targetRevision: HEAD
     path: charts/my-web-server
-    helm:
-      valueFiles:
-        - values.yaml
+    helm: {}
   destination:
     server: https://kubernetes.default.svc
     namespace: test-apps
