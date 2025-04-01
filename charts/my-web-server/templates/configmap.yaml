@@ -1,5 +1,6 @@
 apiVersion: v1
 kind: ConfigMap
+namespace: test-apps
 metadata:
   name: nginx-config
 data:
