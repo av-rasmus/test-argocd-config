@@ -1,0 +1,13 @@
+apiVersion: v2
+name: my-web-server
+
+type: application
+
+version: 0.1.1
+
+appVersion: "1.0"
+
+dependencies:
+  - name: my-web-server
+    version: 0.1.0
+    repository: https://github.com/av-rasmus/test-helm-charts.git
