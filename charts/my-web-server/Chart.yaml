@@ -1,13 +1,9 @@
 apiVersion: v2
 name: my-web-server
-
 type: application
-
 version: 0.1.1
-
 appVersion: "1.0"
-
 dependencies:
-  - name: my-web-server
-    version: 0.1.0
-    repository: https://github.com/av-rasmus/test-helm-charts.git
+  - name: nginx
+    version: "15.x.x" # Replace with the desired Bitnami Nginx chart version
+    repository: "oci://registry-1.docker.io/bitnamicharts" # Bitnami OCI repo
