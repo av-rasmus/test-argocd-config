@@ -5,5 +5,5 @@ version: 0.1.1
 appVersion: "1.0"
 dependencies:
   - name: nginx
-    version: "15.x.x" # Replace with the desired Bitnami Nginx chart version
-    repository: "oci://registry-1.docker.io/bitnamicharts" # Bitnami OCI repo
+    version: 19.0.3 # Replace with the desired Bitnami Nginx chart version
+    repository: https://charts.bitnami.com/bitnami # Bitnami OCI repo
