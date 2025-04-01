@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: appofapps
+spec:
+  goTemplate: true
+  generators:
+    - clusters:
+        selector:
+          matchLabels:
+            argocd.argoproj.io/secret-type: cluster
+            # name: exoscale-staging
+  template:
+    metadata:
+      name: "{{ .name }}-applications"
+    spec:
+      project: default
+      source:
+        directory:
+          jsonnet: {}
+          recurse: true
+        repoURL: git@github.com:av-rasmus/test-argocd-config.git
+        targetRevision: HEAD
+        path: clusters/{{ .name }}/apps
+      destination:
+        namespace: argocd
+        server: https://kubernetes.default.svc
+      syncPolicy:
+        automated:
+          selfHeal: true
+    # syncPolicy:
+    #   preserveResourcesOnDeletion: true
+  
