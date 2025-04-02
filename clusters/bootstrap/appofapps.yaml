@@ -9,7 +9,6 @@ spec:
         selector:
           matchLabels:
             argocd.argoproj.io/secret-type: cluster
-            # name: exoscale-staging
   template:
     metadata:
       name: "{{ .name }}-applications"
@@ -19,7 +18,7 @@ spec:
         directory:
           jsonnet: {}
           recurse: true
-        repoURL: https://github.com/av-rasmus/test-argocd-config.git
+        repoURL: git@github.com:aion-dk/argocd-config.git
         targetRevision: HEAD
         path: clusters/{{ .name }}/apps
       destination:
@@ -28,6 +27,3 @@ spec:
       syncPolicy:
         automated:
           selfHeal: true
-    # syncPolicy:
-    #   preserveResourcesOnDeletion: true
-  

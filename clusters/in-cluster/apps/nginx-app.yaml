@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-staging
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: "19.0.3" # Or specify a specific version
+    chart: nginx
+    helm:
+      values: |
+        service:
+          type: LoadBalancer # Or ClusterIP if you don't need external access
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: nginx # Create a namespace named nginx
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true # Create the namespace if it doesn't exist
