@@ -1,0 +1,25 @@
+ingress-nginx:
+  controller:
+    admissionWebhooks:
+      enabled: false
+    autoscaling:
+      enabled: true
+      minReplicas: 2
+      maxReplicas: 4
+      targetCPUUtilizationPercentage: 400
+      targetMemoryUtilizationPercentage: 400
+    resources:
+      requests:
+        cpu: 300m
+        memory: 100mi
+      limits:
+        cpu: 2k
+        memory: 300Mi
+    metrics:
+      enabled: true
+    publishService:
+      enabled: true
+    ingressClassResource:
+      default: true
+    config:
+      "use-proxy-protocol": "false"
