@@ -11,12 +11,6 @@ ingress-nginx:
       targetCPUUtilizationPercentage: 50
       targetMemoryUtilizationPercentage: 50
     priorityClassName: system-cluster-critical
-    metrics:
-      enabled: true
-      serviceMonitor:
-        enabled: true
-        additionalLabels:
-          release: "prometheus"
     service:
       annotations:
         "prometheus.io/port": 10254

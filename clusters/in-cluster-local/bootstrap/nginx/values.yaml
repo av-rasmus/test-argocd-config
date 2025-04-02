@@ -15,8 +15,6 @@ ingress-nginx:
       limits:
         cpu: 2k
         memory: 300Mi
-    metrics:
-      enabled: true
     publishService:
       enabled: true
     ingressClassResource:
