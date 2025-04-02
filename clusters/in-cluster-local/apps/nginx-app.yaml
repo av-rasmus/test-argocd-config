@@ -19,7 +19,7 @@ spec:
           web-server-test.local
         serverBlock: |-
           server {
-            location / {
+            location /ping {
               return 200 "hello!";
             }
           }
