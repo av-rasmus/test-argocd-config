@@ -2,13 +2,6 @@ ingress-nginx:
   controller:
     admissionWebhooks:
       enabled: false
-    resources:
-      requests:
-        cpu: 300mi
-        memory: 100mi
-      limits:
-        cpu: 2k
-        memory: 300Mi
     publishService:
       enabled: true
     ingressClassResource:
