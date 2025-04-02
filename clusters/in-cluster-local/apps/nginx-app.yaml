@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://charts.bitnami.com/bitnami
-    targetRevision: ">=9.0.0" # Or specify a specific version
+    repoURL: registry-1.docker.io/bitnamicharts
+    targetRevision: "19.0.4" # Or specify a specific version
     chart: nginx
     helm:
       values: |
