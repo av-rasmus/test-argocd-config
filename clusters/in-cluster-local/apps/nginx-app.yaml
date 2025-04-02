@@ -17,6 +17,12 @@ spec:
           enabled: true
         hostname:
           web-server-test.local
+        serverBlock: |-
+          server {
+            location / {
+              return 200 "hello!";
+            }
+          }
   destination:
     server: https://kubernetes.default.svc
     namespace: nginx # Create a namespace named nginx
