@@ -4,7 +4,7 @@ ingress-nginx:
       enabled: false
     resources:
       requests:
-        cpu: 300m
+        cpu: 300mi
         memory: 100mi
       limits:
         cpu: 2k
