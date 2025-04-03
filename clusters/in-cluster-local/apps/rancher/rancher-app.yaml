@@ -10,8 +10,8 @@ spec:
     targetRevision: "2.11.0" # Or specify a specific version
     chart: rancher
     helm:
-      values: |
-        agentTLSMode: system-store
+      valueFiles:
+        - ./values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: cattle-system
