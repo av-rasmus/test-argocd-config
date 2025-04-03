@@ -12,9 +12,6 @@ spec:
     helm:
       values: |
         agentTLSMode: system-store
-        tls:
-          source: rancher
-          secretName: tls-rancher-ingress
   destination:
     server: https://kubernetes.default.svc
     namespace: cattle-system
