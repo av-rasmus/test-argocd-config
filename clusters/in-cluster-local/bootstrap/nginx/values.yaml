@@ -11,10 +11,10 @@ ingress-nginx:
     resources:
       requests:
         cpu: 300m
-        memory: 100Mi
+        memory: 500Mi
       limits:
         cpu: 2k
-        memory: 500Mi
+        memory: 4000Mi
     metrics:
       enabled: true
     publishService:
