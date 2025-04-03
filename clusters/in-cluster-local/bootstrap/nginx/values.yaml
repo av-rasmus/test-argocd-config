@@ -2,9 +2,44 @@ ingress-nginx:
   controller:
     admissionWebhooks:
       enabled: false
+    autoscaling:
+      enabled: true
+      minReplicas: 2
+      maxReplicas: 4
+      targetCPUUtilizationPercentage: 400
+      targetMemoryUtilizationPercentage: 400
+    resources:
+      requests:
+        cpu: 300m
+        memory: 500Mi
+      limits:
+        cpu: 2k
+        memory: 4000Mi
+    metrics:
+      enabled: true
     publishService:
       enabled: true
     ingressClassResource:
       default: true
+    service:
+      annotations:
+        "prometheus.io/port": 10254
+        "prometheus.io/scrape": true
+        "service.beta.kubernetes.io/exoscale-loadbalancer-id": "19b75f0b-841b-40d9-80da-7b9c084d9b31"
+        "service.beta.kubernetes.io/exoscale-loadbalancer-external": "true"
+        "service.beta.kubernetes.io/exoscale-loadbalancer-service-instancepool-id": "865afddb-2ada-403a-ae50-24a2e1e04f75"
+    nodeSelector:
+      "k8s.assemblyvoting.net/pool": ingress
+    tolerations:
+      - key: "visibility"
+        operator: "Equal"
+        value: "ingress"
     config:
       "use-proxy-protocol": "false"
+  defaultBackend:
+    nodeSelector:
+      "k8s.assemblyvoting.net/pool": "ingress"
+    tolerations:
+      - key: "visibility"
+        operator: "Equal"
+        value: "ingress"
