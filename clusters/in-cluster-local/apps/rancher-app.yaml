@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://releases.rancher.com/server-charts/latest
-    targetRevision: "2.10.3" # Or specify a specific version
+    targetRevision: "2.11.0" # Or specify a specific version
     chart: rancher
     helm:
       values: |
