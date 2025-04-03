@@ -12,6 +12,16 @@ spec:
     helm:
       values: |
         agentTLSMode: system-store
+        tls:
+          # options: rancher, letsEncrypt, secret
+          source: rancher
+          secretName: tls-rancher-ingress
+        ingress:
+          # If set to false, ingress will not be created
+          # Defaults to true
+          # options: true, false
+          enabled: true
+          servicePort: 80
   destination:
     server: https://kubernetes.default.svc
     namespace: cattle-system
