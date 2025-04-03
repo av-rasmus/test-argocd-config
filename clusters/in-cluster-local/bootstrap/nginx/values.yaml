@@ -8,13 +8,6 @@ ingress-nginx:
       maxReplicas: 1
       targetCPUUtilizationPercentage: 400
       targetMemoryUtilizationPercentage: 400
-    resources:
-      requests:
-        cpu: 300m
-        memory: 500Mi
-      limits:
-        cpu: 2k
-        memory: 4000Mi
     metrics:
       enabled: true
     publishService:
