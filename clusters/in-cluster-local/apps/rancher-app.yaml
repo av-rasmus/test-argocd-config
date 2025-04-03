@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-staging
+  namespace: cattle-system
+spec:
+  project: default
+  source:
+    repoURL: https://releases.rancher.com/server-charts/latest
+    targetRevision: "2.10.3" # Or specify a specific version
+    chart: rancher
+    helm:
+      values: |
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cattle-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
