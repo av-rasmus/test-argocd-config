@@ -1,10 +1,7 @@
-hostname: localhost
+hostname: rancher.local
 ingress:
   enabled: true
   className: nginx
-  hostname: rancher.localhost
-  hosts:
-    - rancher.local
   tls:
     source: rancher
     hosts:
