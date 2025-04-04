@@ -12,8 +12,8 @@ spec:
     targetRevision: HEAD
     path: charts/rancher
     helm:
-      valueFiles:
-        - values.yaml
+      values: |
+        hostname: rancher.local
   destination:
     server: https://kubernetes.default.svc
     namespace: cattle-system
