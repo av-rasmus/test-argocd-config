@@ -2,8 +2,6 @@ hostname: rancher.local
 ingress:
   enabled: true
   className: nginx
-  tls:
-    source: rancher
 resources:
   requests:
     cpu: 250m
