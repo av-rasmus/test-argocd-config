@@ -3,6 +3,8 @@ ingress:
   enabled: true
   className: nginx
   hostname: rancher.localhost
+  hosts:
+    - rancher.local
   tls:
     source: rancher
 resources:
