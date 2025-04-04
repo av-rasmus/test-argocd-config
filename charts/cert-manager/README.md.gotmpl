@@ -1,0 +1,13 @@
+{{ template "chart.header" . }}
+
+{{ template "chart.versionBadge" . }}{{ template "chart.typeBadge" . }}{{ template "chart.appVersionBadge" . }}
+
+{{ template "chart.requirementsSection" . }}
+
+# Cert-manager and ClusterIssuer
+This will deploy the CertManager and the ClusterIssuer.
+It requires a cloudflare API token to be able to issue DNS challanges for the certificates
+
+{{ template "chart.valuesSection" . }}
+
+{{ template "helm-docs.versionFooter" . }}

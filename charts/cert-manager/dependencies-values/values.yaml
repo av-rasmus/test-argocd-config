@@ -1,0 +1,4 @@
+global: {}
+cert-manager:
+  installCRDs: true
+api_token: secret
