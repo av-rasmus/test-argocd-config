@@ -9,3 +9,6 @@ resources:
   limits:
     cpu: 500m
     memory: 1Gi
+tls:
+  hosts:
+    - rancher.local
