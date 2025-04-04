@@ -1,0 +1,14 @@
+hostname: localhost
+ingress:
+  enabled: true
+  className: nginx
+  hostname: rancher.localhost
+  tls:
+    source: auto
+resources:
+  requests:
+    cpu: 250m
+    memory: 500Mi
+  limits:
+    cpu: 500m
+    memory: 1Gi
