@@ -4,7 +4,7 @@ ingress:
   className: nginx
   hostname: rancher.localhost
   tls:
-    source: auto
+    source: rancher
 resources:
   requests:
     cpu: 250m
