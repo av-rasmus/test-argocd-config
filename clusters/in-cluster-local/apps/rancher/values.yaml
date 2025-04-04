@@ -1,9 +1,9 @@
 ingress:
   enabled: true
-  servicePort: 80
-  hosts:
-    - rancher.local
+  servicePort: 80 
 tls:
   # options: rancher, letsEncrypt, secret
   source: rancher
   secretName: tls-rancher-ingress
+  hosts:
+    - rancher.local
