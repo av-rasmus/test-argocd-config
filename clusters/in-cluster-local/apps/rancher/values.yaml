@@ -1,7 +1,4 @@
 hostname: rancher.local
-ingress:
-  enabled: true
-  className: nginx
 resources:
   requests:
     cpu: 250m
@@ -9,6 +6,3 @@ resources:
   limits:
     cpu: 500m
     memory: 1Gi
-tls:
-  hosts:
-    - rancher.local
