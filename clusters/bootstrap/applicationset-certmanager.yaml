@@ -10,9 +10,9 @@ spec:
           matchLabels:
             argocd.argoproj.io/secret-type: cluster
           matchExpressions:
-            - key: "hosting.provider"
-              operator: NotIn
-              values: ["aws"]
+            - key: "name"
+              operator: In
+              values: ["in-cluster-local"]
   template:
     metadata:
       name: "{{name}}-cert-manager"
