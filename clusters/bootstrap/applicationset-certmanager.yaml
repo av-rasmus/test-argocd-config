@@ -11,7 +11,7 @@ spec:
             argocd.argoproj.io/secret-type: cluster
           matchExpressions:
             - key: "name"
-              operator: In
+              operator: NotIn
               values: ["in-cluster-local"]
   template:
     metadata:
